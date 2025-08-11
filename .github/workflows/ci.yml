@@ -10,5 +10,11 @@ jobs:
     cypress-run:
         runs-on: ubuntu-latest
         steps:
+            - name: pnpm initalization
+              uses: pnpm/action-setup@v4
+              with:
+                version: 9.15.0
+            - name: Install dependencies
+              run: pnpm install
             - name: Run Cypress tests
               run: pnpx cypress run
